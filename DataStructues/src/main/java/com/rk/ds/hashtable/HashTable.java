@@ -1,18 +1,22 @@
-package com.rk.ds;
+package com.rk.ds.hashtable;
 
 public class HashTable {
-	String[] hashTable;
+	Node[] hashTable;
 	
 	HashTable() {
-		hashTable = new String[10];
+		hashTable = new Node[10];
 	}
 	
 	public void addKey(String key) {
-		
+		int index = hashfunction(key)%10;
+		Node node = new Node();
+		node.setKey(key);
+		hashTable[index] = node;
 	}
 	
-	public void removeKey(String Key) {
-		
+	public void removeKey(String key) {
+		int index = hashfunction(key)%10;
+		hashTable[index] = null;
 	}
 	
 	public boolean searchKey(String key) {

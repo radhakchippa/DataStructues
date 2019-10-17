@@ -1,4 +1,4 @@
-package com.rk.ds;
+package com.rk.ds.hashtable;
 
 public class Node {
 	String key;
