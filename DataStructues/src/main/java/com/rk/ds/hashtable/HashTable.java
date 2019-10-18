@@ -9,17 +9,39 @@ public class HashTable {
 	
 	public void addKey(String key) {
 		int index = hashfunction(key)%10;
-		Node node = new Node();
-		node.setKey(key);
-		hashTable[index] = node;
+		Node newNode = new Node();
+		newNode.setKey(key);
+		newNode.setNext(null);
+		if(hashTable[index] == null) {
+			hashTable[index] = newNode;
+		} else {
+			Node currentNode;
+			do {
+				currentNode = hashTable[index];
+			} while(hasNext(currentNode));
+			currentNode.setNext(newNode);
+		}
+	}
+	
+	public boolean hasNext(Node node) {
+		if(node.getNext() == null)
+			return false;
+		else 
+			return true;
 	}
 	
 	public void removeKey(String key) {
-		int index = hashfunction(key)%10;
-		hashTable[index] = null;
+		
 	}
 	
 	public boolean searchKey(String key) {
+		int index = hashfunction(key)%10;
+		Node currentNode = hashTable[index];
+		do {
+			if(currentNode.getKey() == key) {
+				return true;
+			}
+		} while(hasNext(currentNode));
 		return false;
 	}
 	
