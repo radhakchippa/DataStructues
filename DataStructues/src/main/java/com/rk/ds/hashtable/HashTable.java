@@ -31,14 +31,21 @@ public class HashTable {
 	}
 	
 	public void removeKey(String key) {
-		
+		int index = hashfunction(key)%10;
+		Node node = hashTable[index];
+		do {
+			if(node.getKey() == key) {
+				hashTable[index]=node.getNext();
+				break;
+			}
+		}while(hasNext(node));
 	}
 	
 	public boolean searchKey(String key) {
 		int index = hashfunction(key)%10;
 		Node currentNode = hashTable[index];
 		do {
-			if(currentNode.getKey() == key) {
+			if(currentNode != null && currentNode.getKey() == key) {
 				return true;
 			}
 		} while(hasNext(currentNode));
