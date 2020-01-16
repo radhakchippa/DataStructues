@@ -1,0 +1,8 @@
+0 0 0 0 0 0 0 0 0 0 - elements in Array:0
+1 0 0 0 0 - elements in Array:1
+1 2 - elements in Array:2
+1 2 3 0 - elements in Array:3
+1 2 3 4 - elements in Array:4
+2 3 4 0 0 0 0 0 - elements in Array:3
+2 4 0 0 0 0 0 0 - elements in Array:2
+2 4 0 5 - elements in Array:3
