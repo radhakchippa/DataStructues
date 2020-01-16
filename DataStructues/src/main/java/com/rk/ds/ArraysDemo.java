@@ -29,6 +29,9 @@ public class ArraysDemo {
 	
 	public int[] insertElement(int position, int value) {
 		origArray = resizeArray();
+		if(position >= origArray.length) {
+			return origArray;
+		}
 		if(elementsInAry <= position)
 			origArray[position] = value;
 		else {
